@@ -47,13 +47,13 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
      - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
      - What your final chunk count was across all documents -->
 
-**Chunk size:** 
+**Chunk size:** 350 Tokens
 
-**Overlap:**
+**Overlap:** 50 Tokens
 
-**Why these choices fit your documents:**
+**Why these choices fit your documents:** I chose a chunk size of 350 tokens becuase it felt like a balance to preserve context while also having precision. Since most of the websites had short content due to it mainly being composed of review pages, social media posts, and some official university websites, this token size felt like a good balance to retain complete opinions and dining experiences while also being able to preserve information for the more text heavy websites. An overlap of 50 tokens would also help retain that important information.
 
-**Final chunk count:**
+**Final chunk count:** 13
 
 ---
 
@@ -65,9 +65,9 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
 
-**Model used:**
+**Model used:** all-MiniLM-L6-v2 via sentence-transformers
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** The tradeoffs in choosing a different embedding model depends on either prioritizing efficiency or accuracy. If we chose a more lightweight model, it would be more efficient and fast making it good for a small-scale RAG system, but it may not be as good with semantic understanding which is a very important aspect due to our domain and sources being heavily based on semantics. A more advanced embedding model would improve semantic undertsanding which would work great for this, but it would introduce higher latency and cost.
 
 ---
 
@@ -80,9 +80,9 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
      Do not just say "I told it to use the documents" — show the actual instruction or explain
      the mechanism. -->
 
-**System prompt grounding instruction:**
+**System prompt grounding instruction:** The system enforces grounding by instructing the LLM to use only the retrieved context and to explicitly say it lacks information if the answer is not present in the provided chunks.
 
-**How source attribution is surfaced in the response:**
+**How source attribution is surfaced in the response:** Source attribution is handled outside the model by attaching source metadata to each retrieved chunk and displaying the deduplicated list of source URLs in the UI alongside the generated answer.
 
 ---
 
@@ -94,11 +94,11 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | What do students say about the wait times at Centerpointe Dining Commons during lunch hours? | Students usually report that there usually isn't any rush lines and even at its peak hours the lines are very minor to none. | States it does not have enough information but mentions an approximate 10 minute wait time for sushi | Partially Relevant | Inaccurate |
+| 2 | Is the meal plan at Cal Poly Pomona considered worth it by students? | Mixed opinions; As it is a required purchase in order to live on campus, some feel as though they are wasting money they could use on food they actually want while others like it for the convenience. | Says it is well worth the money for at least some students | Relevant | Accurate |
+| 3 | What are common complaints about campus dining at CPP? | Common complaints include the lack of dining options, inconsistent food quality, and long wait times at the fast food places during peak hours. | Not enought information/doesn't mention complaints | Off-target | Inaccurate |
+| 4 | Where do students recommend eating near Cal Poly Pomona off-campus? | Students usually recommend the nearby fast food or local restaurants in Pomona, West Covina, or Diamond Bar as better alternatives to campus dining. | Not enough information, says it provides dining options but not where students recommend | Partially relevant | Inaccurate |
+| 5 | How do students compare the Centerpointe Dining Commons to other options on campus? | Students do like the price and buffet nature of Centerpointe; however, students often prefer the other on campus restaurants like Panda Express and Qdoba. | Not enough information/no direct comparison | Off-target | Inaccurate |
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
@@ -118,13 +118,13 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
      "The embedding model treated the professor's nickname as out-of-vocabulary and returned
      results from an unrelated review" is an explanation. -->
 
-**Question that failed:**
+**Question that failed:** What are common complaints about campus dining at CPP?
 
-**What the system returned:**
+**What the system returned:** The system failed to retrive complaint-specific chunks and responded with not enough information.
 
-**Root cause (tied to a specific pipeline stage):**
+**Root cause (tied to a specific pipeline stage):** The failure originates from the Ingest and Chunking stage as it failed to properly scrape and chunk the right information from sties that provide complaints
 
-**What you would change to fix it:**
+**What you would change to fix it:** Fix the scraper and increase the chunk overlap to retain more important information
 
 ---
 
@@ -133,9 +133,9 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
 <!-- Reflect on how planning.md shaped your implementation.
      Answer both questions with at least 2–3 sentences each. -->
 
-**One way the spec helped you during implementation:**
+**One way the spec helped you during implementation:** The pipeline design in planning.md guided me on how each stage is split within the RAG pipeline and also helped me test each stage. Defining a chunk size and overlap within planning.md also helped since it helped me avoid inconsistent splitting and overall helped me be more structured within this process.
 
-**One way your implementation diverged from the spec, and why:**
+**One way your implementation diverged from the spec, and why:** During my implementation, I adjusted teh lceaning rules and filtering logic to remove irrelevant text. I also reduced the reliance from some of the social media sources since they didn't contribute any meaningful and retrievable text.
 
 ---
 
@@ -152,12 +152,12 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My chunking strategy from planning.md and sample scraped dining reviews
+- *What it produced:* A basic chunking function with fixed-size splits (400 chars)
+- *What I changed or overrode:* I adjusted the chunking to use word-based splitting rather than character-based and increased the overlap to 80 words
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My pipeline design for retrieval and embedding
+- *What it produced:* A working RAG architecture suing sentence-transformers and ChromaDB but without source tracking
+- *What I changed or overrode:* I made it so that the pipeline would have attatched metadata to every chunk so I can trace the answers back to their original source
