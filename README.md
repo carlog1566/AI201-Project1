@@ -135,7 +135,7 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
 
 **One way the spec helped you during implementation:** The pipeline design in planning.md guided me on how each stage is split within the RAG pipeline and also helped me test each stage. Defining a chunk size and overlap within planning.md also helped since it helped me avoid inconsistent splitting and overall helped me be more structured within this process.
 
-**One way your implementation diverged from the spec, and why:** During my implementation, I adjusted teh lceaning rules and filtering logic to remove irrelevant text. I also reduced the reliance from some of the social media sources since they didn't contribute any meaningful and retrievable text.
+**One way your implementation diverged from the spec, and why:** During my implementation, I adjusted the learning rules and filtering logic to remove irrelevant text. I also reduced the reliance from some of the social media sources since they didn't contribute any meaningful and retrievable text.
 
 ---
 
