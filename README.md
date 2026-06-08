@@ -47,7 +47,7 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
      - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
      - What your final chunk count was across all documents -->
 
-**Chunk size:**
+**Chunk size:** 
 
 **Overlap:**
 
