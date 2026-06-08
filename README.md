@@ -23,18 +23,18 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | Yelp | Review Page | https://www.yelp.com/biz/centerpointe-dining-commons-pomona |
-| 2 | OpenTable | Restaurant Directory | https://www.opentable.com/landmark/restaurants-near-california-state-polytechnic-university-pomona |
-| 3 | Facebook | Social Media Page | https://www.facebook.com/cppdining/ |
-| 4 | CPPDining | Official CPP Dining Webiste | https://cppdining.com/eat-well-cpp/ |
-| 5 | Tripadvisor | Restaurant Review & Directory Page | https://www.tripadvisor.com/RestaurantsNear-g32911-d5789363-California_State_Polytechnic_University_Pomona-Pomona_California.html |
-| 6 | TikTok | Social Media Page/Short-Form Videos | https://www.tiktok.com/discover/dining-hall-review-cal-poly-pomona |
-| 7 | Instagram | Social Media Page | https://www.instagram.com/cppdining/?hl=en |
-| 8 | The Poly Post | School News Article | https://thepolypost.com/arts-and-culture/2020/02/04/review-centerpointe-dining-commons-is-the-new-go-to-spot/ |
-| 9 | Reddit | Discussion Thread | https://www.reddit.com/r/CalPolyPomona/comments/1fg56da/cpp_dining_tier_list/ |
-| 10 | CPP | Official University Webpage | https://www.cpp.edu/aboutcpp/visitor-information/dining.shtml |
+| #  | Source           | Type                         | URL or file path |
+|----|------------------|------------------------------|------------------|
+| 1  | Yelp             | Review Page                  | https://www.yelp.com/biz/centerpointe-dining-commons-pomona |
+| 2  | OpenTable        | Restaurant Directory         | https://www.opentable.com/landmark/restaurants-near-california-state-polytechnic-university-pomona |
+| 3  | CPP Dining       | Official Dining Website      | https://cppdining.com/eat-well-cpp/ |
+| 4  | CPP Dining       | Official University Page     | https://www.cpp.edu/aboutcpp/visitor-information/dining.shtml |
+| 5  | The Poly Post    | School News Article          | https://thepolypost.com/arts-and-culture/2020/02/04/review-centerpointe-dining-commons-is-the-new-go-to-spot/ |
+| 6  | Reddit           | Discussion Thread            | https://www.reddit.com/r/CalPolyPomona/comments/1fg56da/cpp_dining_tier_list/ |
+| 7  | Reddit           | Search Thread (Dining Posts) | https://www.reddit.com/r/CalPolyPomona/search/?q=dining |
+| 8  | Tripadvisor      | Review Directory             | https://www.tripadvisor.com/RestaurantsNear-g32911-d5789363-California_State_Polytechnic_University_Pomona-Pomona_California.html |
+| 9  | Niche            | Student Reviews              | https://www.niche.com/colleges/california-state-polytechnic-university-pomona/reviews/ |
+| 10 | CPP Housing Page | Dining Information Page      | https://www.cpp.edu/housing/dining.shtml |
 
 ---
 
