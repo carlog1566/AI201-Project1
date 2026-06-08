@@ -30,7 +30,7 @@ Best dining options at Cal Poly Pomona - This is useful because there may be inc
 | 3 | Facebook | Social Media Page | https://www.facebook.com/cppdining/ |
 | 4 | CPPDining | Official CPP Dining Webiste | https://cppdining.com/eat-well-cpp/ |
 | 5 | Tripadvisor | Restaurant Review & Directory Page | https://www.tripadvisor.com/RestaurantsNear-g32911-d5789363-California_State_Polytechnic_University_Pomona-Pomona_California.html |
-| 6 | TikTok | Social Media Page/Short-Form Videos | https://www.tripadvisor.com/RestaurantsNear-g32911-d5789363-California_State_Polytechnic_University_Pomona-Pomona_California.html |
+| 6 | TikTok | Social Media Page/Short-Form Videos | https://www.tiktok.com/discover/dining-hall-review-cal-poly-pomona |
 | 7 | Instagram | Social Media Page | https://www.instagram.com/cppdining/?hl=en |
 | 8 | The Poly Post | School News Article | https://thepolypost.com/arts-and-culture/2020/02/04/review-centerpointe-dining-commons-is-the-new-go-to-spot/ |
 | 9 | Reddit | Discussion Thread | https://www.reddit.com/r/CalPolyPomona/comments/1fg56da/cpp_dining_tier_list/ |
